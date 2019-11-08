@@ -7,7 +7,6 @@ require(stringr)
 require(tibbletime)
 require(zoo)
 
-
 ##############################################
 #Enter the USGS/NWIS site number to be elavuated here:
 rm(list = ls())
