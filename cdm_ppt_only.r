@@ -6,8 +6,8 @@ require(stringr)
 require(zoo)
 
 
-site_lat_dd <- 45.0
-site_lon_dd <- -89.0
+site_lat_dd <- 45.627547 
+site_lon_dd <- -89.437777 
 
 ############################################
 #This section returns the monthly PRISM PPT data for the site_no lat/long 
