@@ -8,7 +8,7 @@ require(geoknife)
 require(stringr)
 require(tibbletime)
 require(zoo)
-library(sp)
+
 
 Lake_Mi<-fread('https://www.glerl.noaa.gov/data/dashboard/data/levels/1918_PRES/miHuron1918.csv', skip = 2, header=TRUE)
 Lake_Mi<-melt(Lake_Mi, id.vars = "year")
@@ -19,8 +19,8 @@ ggplot(Lake_Mi, aes(Lake_Mi$date, Lake_Mi$value)) +geom_line()
 mihursup_huc08 <- read_csv("~/DNR/GIS/DNR Data/Watersheds/mihursup_huc08.csv")
 huc08 <- as.vector(mihursup_huc08$HUC8)
 
-#stencil<-simplegeom(c(-89,46.1))
-#stencil <- webgeom('HUC8::04020103')
+
+#horribly generic and hamfisted area, but a used a bounding box to get prism area within CONUS that was close ot watershed boundary of lake MI
 
 upper_gl_bb <- Polygon(cbind(c(-93,-90,-83,-86),c(47,48,43,41)))
 upper_gl_bb <- Polygons(list(upper_gl_bb), "bb1")
